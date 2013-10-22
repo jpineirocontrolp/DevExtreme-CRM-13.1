@@ -7,7 +7,7 @@ window.CRM = $.extend(true, window.CRM, {
             {
                 "title": "Orders",
                 "action": "#Orders",
-                "icon": "order"
+                "icon": "money"
             },
             {
                 "title": "Products",
@@ -17,7 +17,7 @@ window.CRM = $.extend(true, window.CRM, {
             {
                 "title": "Shippers",
                 "action": "#Shippers",
-                "icon": "shipper"
+                "icon": "car"
             },
             {
                 "title": "About",
