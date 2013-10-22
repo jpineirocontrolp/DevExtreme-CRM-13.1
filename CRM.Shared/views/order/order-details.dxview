@@ -62,6 +62,20 @@
                     <div class="dx-field-label">Ship country</div>
                     <div class="dx-field-value" data-bind="text: order.ShipCountry"></div>
                 </div>
+                <h2 class="dx-detail-item-label">Order items</h2>
+                <div class="dx-fieldset order-details">
+                    <div data-bind="dxList: { dataSource: orderDetailsSource, scrollingEnabled: false }" style="background: none;">
+                        <div data-bind="dxAction: '#ProductDetails/{Product.ProductID}'" data-options="dxTemplate : { name: 'item' } " >                        
+                            <div data-bind="text: Product.ProductName"></div>
+                            <div>
+                                Quantity: <span data-bind="text: Quantity"></span>
+                            </div>
+                            <div>
+                                Total price: <span data-bind="text: TotalPriceFormatted"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			</div>
             <div data-options="dxContentPlaceholder : { name: 'view-footer', transition: 'none' } " ></div>
         </div>

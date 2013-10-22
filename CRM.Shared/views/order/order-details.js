@@ -18,6 +18,16 @@ CRM.OrderDetails = function(params) {
             });
         },
 
+        orderDetailsSource: {
+            store: CRM.db.Order_Details,
+            filter: ["OrderID", Number(params.id)],
+            expand: "Product",
+            paginate: false,
+            map: function(item) {
+                return new CRM.Order_DetailsViewModel(item);
+            }
+        },
+
         viewShown: function() {
             orderDetails = this;
             CRM.db.Orders.byKey(params.id, { expand: ["Customer", "Employee", "Shipper"] }).done(function(data) {

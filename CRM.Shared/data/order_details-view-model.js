@@ -8,6 +8,10 @@
             this.Discount = ko.observable();
             if(data)
                 this.fromJS(data);
+            this.TotalPriceFormatted = ko.computed(function() {
+                var sum = this.UnitPrice() * this.Quantity() * (1 - this.Discount());
+                return Globalize.format(sum, "c");
+            }, this);
     };
 
     $.extend(CRM.Order_DetailsViewModel.prototype, {
