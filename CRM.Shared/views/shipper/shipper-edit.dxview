@@ -1,0 +1,23 @@
+
+<div data-options="dxView : { name: 'ShipperEdit', mode: 'edit', title: 'Shipper' } " >
+    <div data-bind="dxCommand: { action: handleSave, location: 'save', title: 'Save', icon: 'save' } "></div>
+    <div data-bind="dxCommand: { action: '#_back', location: 'cancel', behavior: 'back', title: 'Cancel', icon: 'close' }" ></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Shipper ID: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: shipper.ShipperID, readOnly: true }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Company name: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: shipper.CompanyName, placeholder: 'Enter Company name' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Phone: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: shipper.Phone, placeholder: 'Enter Phone' }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

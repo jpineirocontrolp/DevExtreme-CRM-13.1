@@ -1,0 +1,14 @@
+
+<div data-options="dxView : { name: 'Orders', title: 'Orders', targetFrame: 'navigation' } " >
+    <div data-bind="dxCommand: { action: '#OrderEdit', direction: 'none', location: 'create', title: 'Add', icon: 'plus' }"></div>
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >             
+        <div data-bind="dxList: { dataSource: dataSource, pullRefreshEnabled: true }">
+          <div data-bind="dxAction: '#OrderDetails/{OrderID}'" data-options="dxTemplate : { name: 'item' } " >
+<!--
+                <img height="55" style="padding: 10px; float:left;" data-bind="attr: { src: imageUrlPropertyName }" />
+-->
+                <div class="list-item" data-bind="text: ShipName"></div>
+          </div>                  
+        </div>
+    </div>
+</div>

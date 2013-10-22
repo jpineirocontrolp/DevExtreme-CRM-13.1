@@ -1,0 +1,25 @@
+
+<div data-options="dxView : { name: 'ShipperDetails', title: 'Shipper' } " >
+    <div data-bind="dxCommand: { action: '#ShipperEdit/{id}', direction: 'none', location: 'edit', title: 'Edit', icon: 'edit' }"></div>
+    <div data-bind="dxCommand: { action: handleDelete, location: 'delete', title: 'Delete', icon: 'remove' }"></div>
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: { }">
+            <h2 data-bind="text: shipper.CompanyName"></h2>
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Shipper ID</div>
+                    <div class="dx-field-value" data-bind="text: shipper.ShipperID"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Company name</div>
+                    <div class="dx-field-value" data-bind="text: shipper.CompanyName"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Phone</div>
+                    <div class="dx-field-value" data-bind="text: shipper.Phone"></div>
+                </div>
+			</div>
+            <div data-options="dxContentPlaceholder : { name: 'view-footer', transition: 'none' } " ></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+
+<div data-options="dxView : { name: 'OrderDetails', title: 'Order' } " >
+    <div data-bind="dxCommand: { action: '#OrderEdit/{id}', direction: 'none', location: 'edit', title: 'Edit', icon: 'edit' }"></div>
+    <div data-bind="dxCommand: { action: handleDelete, location: 'delete', title: 'Delete', icon: 'remove' }"></div>
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: { }">
+            <h2 data-bind="text: order.ShipName"></h2>
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Order ID</div>
+                    <div class="dx-field-value" data-bind="text: order.OrderID"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Customer</div>
+                    <div class="dx-field-value" data-bind="text: order.Customer.CompanyName"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Employee</div>
+                    <div class="dx-field-value" data-bind="text: order.Employee.Title"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Order date</div>
+                    <div class="dx-field-value" data-bind="text: order.OrderDate"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Required date</div>
+                    <div class="dx-field-value" data-bind="text: order.RequiredDate"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Shipped date</div>
+                    <div class="dx-field-value" data-bind="text: order.ShippedDate"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Shipper</div>
+                    <div class="dx-field-value" data-bind="text: order.Shipper.CompanyName"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Freight</div>
+                    <div class="dx-field-value" data-bind="text: order.Freight"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship name</div>
+                    <div class="dx-field-value" data-bind="text: order.ShipName"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship address</div>
+                    <div class="dx-field-value" data-bind="text: order.ShipAddress"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship city</div>
+                    <div class="dx-field-value" data-bind="text: order.ShipCity"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship region</div>
+                    <div class="dx-field-value" data-bind="text: order.ShipRegion"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship postal code</div>
+                    <div class="dx-field-value" data-bind="text: order.ShipPostalCode"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship country</div>
+                    <div class="dx-field-value" data-bind="text: order.ShipCountry"></div>
+                </div>
+			</div>
+            <div data-options="dxContentPlaceholder : { name: 'view-footer', transition: 'none' } " ></div>
+        </div>
+    </div>
+</div>

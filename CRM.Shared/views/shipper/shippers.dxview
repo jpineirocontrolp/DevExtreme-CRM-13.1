@@ -1,0 +1,14 @@
+
+<div data-options="dxView : { name: 'Shippers', title: 'Shippers', targetFrame: 'navigation' } " >
+    <div data-bind="dxCommand: { action: '#ShipperEdit', direction: 'none', location: 'create', title: 'Add', icon: 'plus' }"></div>
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >             
+        <div data-bind="dxList: { dataSource: dataSource, pullRefreshEnabled: true }">
+          <div data-bind="dxAction: '#ShipperDetails/{ShipperID}'" data-options="dxTemplate : { name: 'item' } " >
+<!--
+                <img height="55" style="padding: 10px; float:left;" data-bind="attr: { src: imageUrlPropertyName }" />
+-->
+                <div class="list-item" data-bind="text: CompanyName"></div>
+          </div>                  
+        </div>
+    </div>
+</div>

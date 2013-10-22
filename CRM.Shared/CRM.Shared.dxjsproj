@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1b839608-a6ac-4f79-8757-31f847cec949</ProjectGuid>
+    <AutoAssignPort>True</AutoAssignPort>
+    <RunInSimulator>True</RunInSimulator>
+    <ApplicationPage>app.html</ApplicationPage>
+    <Name>Shared</Name>
+    <RootNamespace>Shared</RootNamespace>
+    <Links>
+      <LinkDescription>
+        <Project>c5b485d1-97b9-4914-9e85-c5a68236ebbf</Project>
+        <Path />
+      </LinkDescription>
+      <LinkDescription>
+        <Project>a31fe3bb-f4a9-4bd2-b155-67520d370bb0</Project>
+        <Path>www</Path>
+      </LinkDescription>
+    </Links>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="crm.shared.config.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\categories-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\customers-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\db.js" />
+    <Content Include="data\employees-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\orders-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\order_details-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\products-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\shippers-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\suppliers-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\logo.png" />
+    <Content Include="js\dx.all.js" />
+    <Content Include="js\globalize.min.js" />
+    <Content Include="js\jquery-1.9.1.min.js" />
+    <Content Include="js\knockout-2.2.1.js" />
+    <Content Include="views\about.html" />
+    <Content Include="views\order\order-details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\order\order-details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\order\order-edit.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\order\order-edit.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\order\orders.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\order\orders.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\product\product-details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\product\product-details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\product\product-edit.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\product\product-edit.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\product\products.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\product\products.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\shipper\shipper-details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\shipper\shipper-details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\shipper\shipper-edit.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\shipper\shipper-edit.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\shipper\shippers.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\shipper\shippers.js">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
+    <Folder Include="views\" />
+    <Folder Include="views\order\" />
+    <Folder Include="views\product\" />
+    <Folder Include="views\shipper\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Target Name="Build">
+    <!--
+    <Message Text="'$(MSBuildToolsPath)'"></Message>
+    -->
+    <Message Text="Build JSProject '$(MSBuildProjectFile)':" Importance="high">
+    </Message>
+    <Message Text="Copying refenecses to output dir..." Importance="high" />
+    <MSBuild Targets="Build" Projects="@(ProjectReference)" Properties="OutputPath=$([System.IO.Path]::GetFullPath('$(OutputPath)'))">
+    </MSBuild>
+    <Message Text="Copying files to output dir..." Importance="high" />
+    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content->'$(OutputPath)%(RelativeDir)%(Filename)%(Extension)')" />
+    <Message Text="Finished Build JSProject '$(MSBuildProjectFile)'." Importance="high">
+    </Message>
+  </Target>
+  <Target Name="CreateManifestResourceNames" Condition="'@(ResxWithNoCulture)@(ResxWithCulture)@(NonResxWithNoCulture)@(NonResxWithCulture)'!=''" />
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+  <Target Name="Clean">
+    <!--
+    <Message Text="Cleaning Output files..." Importance="high" />
+    <Delete Files="@([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+    -->
+    <Message Text="Cleaning Output dir ($([System.IO.Path]::GetFullPath('$(OutputPath)')))..." Importance="high" />
+    <RemoveDir Directories="$([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+  </Target>
+</Project>

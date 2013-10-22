@@ -1,0 +1,67 @@
+
+<div data-options="dxView : { name: 'OrderEdit', mode: 'edit', title: 'Order' } " >
+    <div data-bind="dxCommand: { action: handleSave, location: 'save', title: 'Save', icon: 'save' } "></div>
+    <div data-bind="dxCommand: { action: '#_back', location: 'cancel', behavior: 'back', title: 'Cancel', icon: 'close' }" ></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Order ID: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: order.OrderID, readOnly: true }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Customer: </div>
+                    <div class="dx-field-value" data-bind="dxLookup: { dataSource: customersSource, value: order.Customer.CustomerID, valueExpr: 'CustomerID' , displayExpr: 'CompanyName', title: 'Customers', placeholder: 'Choose Customer' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Employee: </div>
+                    <div class="dx-field-value" data-bind="dxLookup: { dataSource: employeesSource, value: order.Employee.EmployeeID, valueExpr: 'EmployeeID' , displayExpr: 'Title', title: 'Employees', placeholder: 'Choose Employee' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Order date: </div>
+                    <div class="dx-field-value" data-bind="dxDateBox: { value: order.OrderDate, placeholder: 'Enter Order date', format: 'date' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Required date: </div>
+                    <div class="dx-field-value" data-bind="dxDateBox: { value: order.RequiredDate, placeholder: 'Enter Required date', format: 'date' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Shipped date: </div>
+                    <div class="dx-field-value" data-bind="dxDateBox: { value: order.ShippedDate, placeholder: 'Enter Shipped date', format: 'date' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Shipper: </div>
+                    <div class="dx-field-value" data-bind="dxLookup: { dataSource: shippersSource, value: order.Shipper.ShipperID, valueExpr: 'ShipperID' , displayExpr: 'CompanyName', title: 'Shippers', placeholder: 'Choose Shipper' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Freight: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: order.Freight, placeholder: 'Enter Freight' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship name: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: order.ShipName, placeholder: 'Enter Ship name' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship address: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: order.ShipAddress, placeholder: 'Enter Ship address' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship city: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: order.ShipCity, placeholder: 'Enter Ship city' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship region: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: order.ShipRegion, placeholder: 'Enter Ship region' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship postal code: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: order.ShipPostalCode, placeholder: 'Enter Ship postal code' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Ship country: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: order.ShipCountry, placeholder: 'Enter Ship country' }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
