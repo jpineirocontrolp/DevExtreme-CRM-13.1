@@ -4,10 +4,8 @@
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >             
         <div data-bind="dxList: { dataSource: dataSource, pullRefreshEnabled: true }">
           <div data-bind="dxAction: '#ProductDetails/{ProductID}'" data-options="dxTemplate : { name: 'item' } " >
-<!--
-                <img height="55" style="padding: 10px; float:left;" data-bind="attr: { src: imageUrlPropertyName }" />
--->
                 <div class="list-item" data-bind="text: ProductName"></div>
+                <div class="list-item" data-bind="text: Globalize.format(UnitPrice(), 'c')"></div>
           </div>                  
         </div>
     </div>
