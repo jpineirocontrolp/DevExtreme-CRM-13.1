@@ -16,7 +16,7 @@
                 </div>
                 <div class="dx-field">
                     <div class="dx-field-label">Employee</div>
-                    <div class="dx-field-value" data-bind="text: order.Employee.Title"></div>
+                    <div class="dx-field-value" data-bind="text: order.Employee.LastName"></div>
                 </div>
                 <div class="dx-field">
                     <div class="dx-field-label">Order date</div>

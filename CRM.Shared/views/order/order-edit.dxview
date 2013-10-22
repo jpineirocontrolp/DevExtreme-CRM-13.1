@@ -15,7 +15,7 @@
                 </div>
                 <div class="dx-field">
                     <div class="dx-field-label">Employee: </div>
-                    <div class="dx-field-value" data-bind="dxLookup: { dataSource: employeesSource, value: order.Employee.EmployeeID, valueExpr: 'EmployeeID' , displayExpr: 'Title', title: 'Employees', placeholder: 'Choose Employee' }"></div>
+                    <div class="dx-field-value" data-bind="dxLookup: { dataSource: employeesSource, value: order.Employee.EmployeeID, valueExpr: 'EmployeeID', displayExpr: 'LastName', title: 'Employees', placeholder: 'Choose Employee' }"></div>
                 </div>
                 <div class="dx-field">
                     <div class="dx-field-label">Order date: </div>

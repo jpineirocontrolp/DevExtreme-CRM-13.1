@@ -10,7 +10,7 @@ CRM.OrderEdit = function(params) {
         },
         employeesSource: {
             store: CRM.db.Employees,
-            select: ["EmployeeID", "Title"]
+            select: ["EmployeeID", "LastName"]
         },
         shippersSource: {
             store: CRM.db.Shippers,
